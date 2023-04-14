@@ -1,4 +1,6 @@
 import React from "react";
+
+import Layout from "../components/layout";
 import { motion } from "framer-motion";
 
 const productsDb = [
@@ -82,38 +84,46 @@ const products = {
   },
 };
 
-export default function IndexPage({ isFirstMount }) {
+export default function IndexPage({isFirstMount}) {
   return (
-    <motion.section exit={{ opacity: 0 }}>
-      {isFirstMount && <InitialTransition />}
+    <Layout>
+      <motion.section exit={{ opacity: 0 }}>
+        {isFirstMount && <InitialTransition />}
 
-      <motion.div
-        initial="initial"
-        animate="animate"
-        variants={content(isFirstMount)}
-        className="space-y-12"
-      >
-        <motion.h1 variants={title} className="text-6xl font-black text-center">
-          Welcome to tailstore!
-        </motion.h1>
+        <motion.div
+          initial="initial"
+          animate="animate"
+          variants={content(isFirstMount)}
+          className="space-y-12"
+        >
+          <motion.h1
+            variants={title}
+            className="text-6xl font-black text-center"
+          >
+            Welcome to tailstore!
+          </motion.h1>
 
-        <motion.section variants={products} className="text-gray-700 body-font">
-          <div className="container px-5 pt-12 mx-auto">
-            <div className="flex flex-wrap -m-4">
-              {productsDb.map((product, index) => (
-                <Product key={index} {...product} />
-              ))}
+          <motion.section
+            variants={products}
+            className="text-gray-700 body-font"
+          >
+            <div className="container px-5 pt-12 mx-auto">
+              <div className="flex flex-wrap -m-4">
+                {productsDb.map((product, index) => (
+                  <Product key={index} {...product} />
+                ))}
+              </div>
             </div>
-          </div>
-        </motion.section>
-      </motion.div>
-    </motion.section>
+          </motion.section>
+        </motion.div>
+      </motion.section>
+    </Layout>
   );
 }
 
 const Product = ({ img, category, name, price }) => (
   <div className="w-full p-4 lg:w-1/4 md:w-1/2">
-    <a className="relative block h-48 overflow-hidden rounded">
+    <a href="#no-link" className="relative block h-48 overflow-hidden rounded">
       <img
         alt="ecommerce"
         className="block object-cover object-center w-full h-full"

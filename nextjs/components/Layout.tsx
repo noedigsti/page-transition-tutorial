@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-import Link from "next/link";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Layout = ({ children }) => {
   return (
@@ -20,7 +20,7 @@ const Header = () => {
     <header className="text-gray-700 body-font">
       <div className="container flex flex-col flex-wrap items-center p-5 mx-auto md:flex-row">
         <Link href="/">
-          <a className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0">
+          <span className="flex items-center mb-4 font-medium text-gray-900 title-font md:mb-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -34,28 +34,28 @@ const Header = () => {
               <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
             </svg>
             <span className="ml-3 text-xl">tailstore</span>
-          </a>
+          </span>
         </Link>
         <nav className="flex flex-wrap items-center justify-center space-x-4 text-base md:ml-auto">
           <Link href="/">
-            <a
+            <span
               className={`hover:text-gray-900 ${
-                asPath === "/" ? "font-black text-black" : ""
+                asPath === '/' ? 'font-black text-black' : ''
               }`}
             >
               Store
-            </a>
+            </span>
           </Link>
           <Link href="/contact">
-            <a
+            <span
               className={
-                asPath === "/contact"
-                  ? "font-black text-black"
-                  : "hover:text-gray-900"
+                asPath === '/contact'
+                  ? 'font-black text-black'
+                  : 'hover:text-gray-900'
               }
             >
               Contact Us
-            </a>
+            </span>
           </Link>
         </nav>
       </div>
@@ -92,7 +92,7 @@ const Footer = () => (
             CATEGORIES
           </h2>
           <Links
-            names={["First Link", "Second Link", "Third Link", "Fourth link"]}
+            names={['First Link', 'Second Link', 'Third Link', 'Fourth link']}
           />
         </div>
         <div className="w-full px-4 lg:w-1/4 md:w-1/2">
@@ -100,7 +100,7 @@ const Footer = () => (
             CATEGORIES
           </h2>
           <Links
-            names={["First Link", "Second Link", "Third Link", "Fourth link"]}
+            names={['First Link', 'Second Link', 'Third Link', 'Fourth link']}
           />
         </div>
         <div className="w-full px-4 lg:w-1/4 md:w-1/2">
@@ -108,7 +108,7 @@ const Footer = () => (
             CATEGORIES
           </h2>
           <Links
-            names={["First Link", "Second Link", "Third Link", "Fourth link"]}
+            names={['First Link', 'Second Link', 'Third Link', 'Fourth link']}
           />
         </div>
         <div className="w-full px-4 lg:w-1/4 md:w-1/2">
@@ -116,7 +116,7 @@ const Footer = () => (
             CATEGORIES
           </h2>
           <Links
-            names={["First Link", "Second Link", "Third Link", "Fourth link"]}
+            names={['First Link', 'Second Link', 'Third Link', 'Fourth link']}
           />
         </div>
       </div>
@@ -200,7 +200,9 @@ const Links = ({ names }) => (
   <nav className="mb-10 list-none">
     {names.map((name) => (
       <li key={name}>
-        <a className="text-gray-600 hover:text-gray-800">{name}</a>
+        <a className="text-gray-600 hover:text-gray-800 cursor-pointer">
+          {name}
+        </a>
       </li>
     ))}
   </nav>

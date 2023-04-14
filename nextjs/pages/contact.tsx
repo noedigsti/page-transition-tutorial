@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const content = {
   animate: {
@@ -47,7 +47,7 @@ const ContactPage = () => {
           className="flex flex-col w-full mb-12 text-center"
         >
           <h1 className="mb-4 text-2xl font-medium text-gray-900 sm:text-3xl title-font">
-            Contact Us
+            Contact Us!
           </h1>
           <p className="mx-auto text-base leading-relaxed lg:w-2/3">
             Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
